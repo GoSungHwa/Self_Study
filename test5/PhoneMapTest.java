@@ -1,5 +1,6 @@
 package ncs.test5;
 
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +31,8 @@ public class PhoneMapTest {
 				System.out.println("맵에 저장된 정보는 다음과 같습니다.");
 				System.out.println(entry.getKey() + " : " + entry.getValue());
 				p.setProperty(entry.getKey().toString(), entry.getValue().toString());
+				
+				p.store(new FileOutputStream("C:\\\\z_workspace/phone.xml"),"Phone.xml 파일에 성공적으로 저장되었습니다.");
 			}
 			System.out.println("Phone.xml 파일에 성공적으로 저장되었습니다.");
 		}catch(Exception e) {
